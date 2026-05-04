@@ -1,0 +1,6 @@
+{
+  "name": "First Read",
+  "description": "A web-based PDF reader + annotation + side-note system optimized for textbook studying with dual-column revision notes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
