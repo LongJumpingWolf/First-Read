@@ -671,10 +671,10 @@ export default function App() {
   const currentPageData = state.pages[state.currentPage] || { leftNotes: '', rightNotes: '', annotations: [] };
 
   return (
-    <div className={cn("h-screen flex flex-col font-sans overflow-hidden transition-colors", isDarkMode ? "bg-slate-950 text-slate-200 dark" : "bg-slate-50 text-gray-900")}>
+    <div className={cn("h-[100dvh] min-h-0 w-full max-w-full flex flex-col font-sans overflow-hidden transition-colors", isDarkMode ? "bg-slate-950 text-slate-200 dark" : "bg-slate-50 text-gray-900")}>
       {/* Header */}
       <header 
-        className={cn("h-16 border-b flex items-center justify-between px-6 z-[60] shrink-0", isDarkMode ? "bg-slate-900 border-slate-800" : "bg-white border-gray-200")}
+        className={cn("min-h-16 h-auto border-b flex flex-wrap items-center justify-between gap-x-4 gap-y-2 px-3 sm:px-4 xl:px-6 py-2 z-[60] shrink-0", isDarkMode ? "bg-slate-900 border-slate-800" : "bg-white border-gray-200")}
         onMouseDown={(e) => e.stopPropagation()}
         onMouseMove={(e) => e.stopPropagation()}
         onMouseUp={(e) => e.stopPropagation()}
@@ -1122,9 +1122,9 @@ export default function App() {
       </header>
 
       {/* Main Workspace */}
-      <main className="flex-1 flex overflow-hidden p-1 gap-1">
+      <main className="flex-1 min-h-0 min-w-0 grid grid-cols-[minmax(220px,0.85fr)_minmax(320px,1.5fr)_minmax(220px,0.85fr)] 2xl:grid-cols-[minmax(300px,350px)_minmax(0,1fr)_minmax(300px,350px)] overflow-hidden p-1 gap-1">
         {/* Left Side Notes */}
-        <section className="w-[300px] xl:w-[350px] shrink-0">
+        <section className="min-w-0 min-h-0 overflow-hidden">
           <NoteEditor 
             title="Left Notes"
             pageNumber={state.currentPage}
